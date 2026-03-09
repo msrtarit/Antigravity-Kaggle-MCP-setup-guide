@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./assets/banner.png" alt="Kaggle MCP Banner" width="800">
+  <img src="./assets/banner.png" alt="Kaggle MCP Banner" width="550">
 
   # 🚀 Kaggle MCP for Antigravity
 
@@ -23,15 +23,20 @@ Kaggle is the home of data science. By adding this MCP server to **Antigravity**
 
 ---
 
-## ⚡ Quick Start
+## 🛠️ Installation & Path Info
 
-### 🔑 1. Get your Token (KGAT)
+### 📍 Config File Location
+Locate your `mcp_config.json` file:
+- **Windows**: `%USERPROFILE%\.gemini\antigravity\mcp_config.json`
+- **macOS/Linux**: `~/.gemini/antigravity/mcp_config.json`
+
+### 🔑 Step 1. Get your Token (KGAT)
 1.  Log in to [Kaggle Settings](https://www.kaggle.com/settings).
 2.  Find the **API/MCP** section.
 3.  Click **Create New Token** and copy the `KGAT_...` string.
 
-### ⚙️ 2. One-Line Config
-Open your `mcp_config.json` and paste this inside `"mcpServers"`:
+### ⚙️ Step 2. One-Line Config
+Add this entry inside the `"mcpServers"` object in your config file:
 
 ```json
 "kaggle": {
@@ -41,9 +46,13 @@ Open your `mcp_config.json` and paste this inside `"mcpServers"`:
     "https://www.kaggle.com/mcp",
     "--header",
     "Authorization: Bearer YOUR_TOKEN_HERE"
-  ]
+  ],
+  "disabled": false
 }
 ```
+
+> [!CAUTION]
+> Replace `YOUR_TOKEN_HERE` with your actual token. Never commit your config file to a public repository!
 
 ---
 
@@ -54,36 +63,6 @@ Open your `mcp_config.json` and paste this inside `"mcpServers"`:
 | **Remote Execution** | Run commands against the Kaggle API. |
 | **Secure Auth** | Uses Kaggle's official General Access Tokens. |
 | **Zero Setup** | Works instantly with `npx` and Antigravity. |
-
----
-
-## ⚙️ 2. Edit Your Config
-
-Locate your `mcp_config.json` file. This is typically found at:
-- **Windows**: `%USERPROFILE%\.gemini\antigravity\mcp_config.json`
-- **macOS/Linux**: `~/.gemini/antigravity/mcp_config.json`
-
-Add the following configuration to the `mcpServers` object:
-
-```json
-{
-  "mcpServers": {
-    "kaggle": {
-      "command": "npx",
-      "args": [
-        "mcp-remote",
-        "https://www.kaggle.com/mcp",
-        "--header",
-        "Authorization: Bearer YOUR_KGAT_TOKEN"
-      ],
-      "disabled": false
-    }
-  }
-}
-```
-
-> [!CAUTION]
-> Replace `YOUR_KGAT_TOKEN` with your actual token. Never commit this file to a public repository!
 
 ---
 
