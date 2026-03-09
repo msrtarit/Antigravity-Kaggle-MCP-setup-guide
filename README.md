@@ -1,28 +1,59 @@
-# 🚀 Kaggle MCP Setup for Antigravity
+<div align="center">
+  <img src="./assets/banner.png" alt="Kaggle MCP Banner" width="800">
 
-[![Model Context Protocol](https://img.shields.io/badge/MCP-Protocol-blue)](https://modelcontextprotocol.io)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  # 🚀 Kaggle MCP for Antigravity
 
-A simple, clear guide to integrating the **Kaggle MCP Server** with **Antigravity**. This allows your AI agent to browse datasets, search kernels, and interact with Kaggle's vast data science ecosystem directly.
+  [![Model Context Protocol](https://img.shields.io/badge/MCP-Protocol-blue?style=for-the-badge)](https://modelcontextprotocol.io)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+  [![Awesome MCP](https://img.shields.io/badge/Awesome-MCP-orange?style=for-the-badge)](https://github.com/punkpeye/awesome-mcp-servers)
+
+  **Give your Antigravity AI agent direct access to the world's largest data science community.**
+
+  [Installation](#-installation) • [Features](#-key-features) • [Usage](#-usage--examples) • [Troubleshooting](#-troubleshooting)
+</div>
+
+<br/>
+
+## 🌟 Why this matters?
+Kaggle is the home of data science. By adding this MCP server to **Antigravity**, your AI agent can now:
+- 🔍 **Search** millions of datasets instantly.
+- 📊 **Analyze** competition leaderboards.
+- � **Read** community kernels for best practices.
+- 🚀 **Pull** data directly into your workspace.
 
 ---
 
-## 🛠 Prerequisites
+## ⚡ Quick Start
 
-- An active [Kaggle](https://www.kaggle.com) account.
-- [Antigravity](https://github.com/google/antigravity) (or any compatible MCP host) installed.
-- [Node.js](https://nodejs.org/) (for `npx`).
+### 🔑 1. Get your Token (KGAT)
+1.  Log in to [Kaggle Settings](https://www.kaggle.com/settings).
+2.  Find the **API/MCP** section.
+3.  Click **Create New Token** and copy the `KGAT_...` string.
+
+### ⚙️ 2. One-Line Config
+Open your `mcp_config.json` and paste this inside `"mcpServers"`:
+
+```json
+"kaggle": {
+  "command": "npx",
+  "args": [
+    "mcp-remote",
+    "https://www.kaggle.com/mcp",
+    "--header",
+    "Authorization: Bearer YOUR_TOKEN_HERE"
+  ]
+}
+```
 
 ---
 
-## 🔑 1. Generate Your Kaggle Access Token
-
-The Kaggle MCP server uses a **General Access Token (KGAT)**.
-
-1.  Log in to [Kaggle](https://www.kaggle.com).
-2.  Go to your **Account Settings** ([kaggle.com/settings](https://www.kaggle.com/settings)).
-3.  Scroll down to the **API** or **MCP** section.
-4.  Generate a new token. It will look like `KGAT_xxxxxxxxxxxxxxxxxxxxxxxxxxx`.
+## ✨ Key Features
+| Feature | Description |
+| :--- | :--- |
+| **Global Search** | Find datasets, competitions, and notebooks. |
+| **Remote Execution** | Run commands against the Kaggle API. |
+| **Secure Auth** | Uses Kaggle's official General Access Tokens. |
+| **Zero Setup** | Works instantly with `npx` and Antigravity. |
 
 ---
 
@@ -56,26 +87,35 @@ Add the following configuration to the `mcpServers` object:
 
 ---
 
-## 🚀 3. Usage & Testing
+## 🚀 Usage & Examples
 
-Restart Antigravity and try a prompt like:
+Once configured, Antigravity becomes your data science assistant. Try these prompts:
 
 > *"Searching for the top 5 most downloaded datasets on Kaggle about Climate Change."*
 
+> *"What are the current top 3 active competitions on Kaggle related to Computer Vision?"*
+
+> *"Find a popular Kaggle notebook that explains Random Forests using Titanic data."*
+
 ---
 
-## ⚖️ License
-
-Distributed under the **MIT License**. See `LICENSE` for more information.
+## 🛡️ Best Practices & Security
+- **Do not share your `mcp_config.json`**: It contains your private Kaggle token.
+- **Rotate keys**: Periodically revoke and regenerate tokens in Kaggle settings.
+- **Limit Context**: Only use the Kaggle server when you actually need data science info to save tokens.
 
 ---
 
 ## 🤝 Contributing
+Found a bug or have a suggestion? Open an [issue](https://github.com/msrtarit/Antigravity-Kaggle-MCP-setup-guide/issues)!
 
-Contributions are welcome! Feel free to open an issue or submit a pull request.
+---
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+## ⭐ Support
+If you find this guide useful, please **give it a star** to help others find it!
+
+---
+
+<div align="center">
+  Made with ❤️ by <a href="https://github.com/msrtarit">msrtarit</a>
+</div>
