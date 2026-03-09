@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./assets/banner.png" alt="Kaggle MCP Banner" width="550">
+
 
   # 🚀 Kaggle MCP for Antigravity
 
