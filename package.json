@@ -1,0 +1,30 @@
+{
+  "name": "antigravity-kaggle-mcp-setup-guide",
+  "version": "1.0.0",
+  "description": "Comprehensive guide and configuration for integrating Kaggle's datasets and kernels into Antigravity via MCP.",
+  "main": "README.md",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "antigravity",
+    "kaggle",
+    "data-science",
+    "ai-agents",
+    "gemini",
+    "google-antigravity",
+    "model-context-protocol"
+  ],
+  "author": "msrtarit",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msrtarit/Antigravity-Kaggle-MCP-setup-guide.git"
+  },
+  "bugs": {
+    "url": "https://github.com/msrtarit/Antigravity-Kaggle-MCP-setup-guide/issues"
+  },
+  "homepage": "https://github.com/msrtarit/Antigravity-Kaggle-MCP-setup-guide#readme"
+}
